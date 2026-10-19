@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Q19 {
+public static int count(String s, char ch, int index) {
+if (index == s.length()) {
+return 0;
+}
+    if (s.charAt(index) == ch) {
+        return 1 + count(s, ch, index + 1);
+    }
+
+    return count(s, ch, index + 1);
+}
+
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    String s = sc.nextLine();
+    char ch = sc.nextLine().charAt(0);
+
+    System.out.println(count(s, ch, 0));
+}
+}
